@@ -1,4 +1,5 @@
 package test;
+
 public class Auto {
     private static int cantidadCreados = 0;
     private String modelo;
@@ -19,7 +20,7 @@ public class Auto {
     }
 
     public Auto() {
-      
+        // Default constructor
     }
 
     public int cantidadAsientos() {
@@ -50,6 +51,7 @@ public class Auto {
         }
     }
 
+    // Getters and setters for private attributes
     public static int getCantidadCreados() {
         return cantidadCreados;
     }
@@ -103,7 +105,7 @@ public class Auto {
     }
 }
 
-class Motor {
+public class Motor {
     private int cilindros;
     private String tipo;
     private int registro;
@@ -112,6 +114,10 @@ class Motor {
         this.cilindros = cilindros;
         this.tipo = tipo;
         this.registro = registro;
+    }
+
+    public Motor() {
+        // Default constructor
     }
 
     public void cambiarRegistro(int nuevoRegistro) {
@@ -124,12 +130,33 @@ class Motor {
         }
     }
 
+    // Getters and setters for private attributes
+    public int getCilindros() {
+        return cilindros;
+    }
+
+    public void setCilindros(int cilindros) {
+        this.cilindros = cilindros;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public int getRegistro() {
         return registro;
     }
+
+    public void setRegistro(int registro) {
+        this.registro = registro;
+    }
 }
 
-class Asiento {
+public class Asiento {
     private String color;
     private double precio;
     private int registro;
@@ -140,13 +167,38 @@ class Asiento {
         this.registro = registro;
     }
 
+    public Asiento() {
+        // Default constructor
+    }
+
     public void cambiarColor(String nuevoColor) {
         if (nuevoColor.equals("rojo") || nuevoColor.equals("verde") || nuevoColor.equals("amarillo") || nuevoColor.equals("negro") || nuevoColor.equals("blanco")) {
             this.color = nuevoColor;
         }
     }
 
+    // Getters and setters for private attributes
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
     public int getRegistro() {
         return registro;
+    }
+
+    public void setRegistro(int registro) {
+        this.registro = registro;
     }
 }
