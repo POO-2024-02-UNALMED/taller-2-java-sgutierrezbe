@@ -6,10 +6,10 @@ public class Auto {
     private double precio;
     private Asiento[] asientos;
     private String marca;
-    private Motor motor;
+    private auto motor;
     private int registro;
 
-    public Auto(String modelo, double precio, Asiento[] asientos, String marca, Motor motor, int registro) {
+    public Auto(String modelo, double precio, Asiento[] asientos, String marca, auto motor, int registro) {
         this.modelo = modelo;
         this.precio = precio;
         this.asientos = asientos;
@@ -88,11 +88,11 @@ public class Auto {
         this.marca = marca;
     }
 
-    public Motor getMotor() {
+    public auto getMotor() {
         return motor;
     }
 
-    public void setMotor(Motor motor) {
+    public void setMotor(auto motor) {
         this.motor = motor;
     }
 
@@ -105,18 +105,18 @@ public class Auto {
     }
 }
 
-public class Motor {
+public class auto {
     private int cilindros;
     private String tipo;
     private int registro;
 
-    public Motor(int cilindros, String tipo, int registro) {
+    public auto(int cilindros, String tipo, int registro) {
         this.cilindros = cilindros;
         this.tipo = tipo;
         this.registro = registro;
     }
 
-    public Motor() {
+    public auto() {
         // Default constructor
     }
 
