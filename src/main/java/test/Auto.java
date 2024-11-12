@@ -6,10 +6,10 @@ public class Auto {
     private double precio;
     private Asiento[] asientos;
     private String marca;
-    private auto motor;
+    private Motor motor;
     private int registro;
 
-    public Auto(String modelo, double precio, Asiento[] asientos, String marca, auto motor, int registro) {
+    public Auto(String modelo, double precio, Asiento[] asientos, String marca, Motor motor, int registro) {
         this.modelo = modelo;
         this.precio = precio;
         this.asientos = asientos;
@@ -88,11 +88,11 @@ public class Auto {
         this.marca = marca;
     }
 
-    public auto getMotor() {
+    public Motor getMotor() {
         return motor;
     }
 
-    public void setMotor(auto motor) {
+    public void setMotor(Motor motor) {
         this.motor = motor;
     }
 
