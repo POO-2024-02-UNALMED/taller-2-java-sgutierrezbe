@@ -157,48 +157,11 @@ public class auto {
 }
 
 public class Asiento {
-    private String color;
-    private double precio;
-    private int registro;
-
-    public Asiento(String color, double precio, int registro) {
-        this.color = color;
-        this.precio = precio;
-        this.registro = registro;
-    }
-
-    public Asiento() {
-        // Default constructor
-    }
-
-    public void cambiarColor(String nuevoColor) {
-        if (nuevoColor.equals("rojo") || nuevoColor.equals("verde") || nuevoColor.equals("amarillo") || nuevoColor.equals("negro") || nuevoColor.equals("blanco")) {
-            this.color = nuevoColor;
-        }
-    }
-
-    // Getters and setters for private attributes
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(double precio) {
-        this.precio = precio;
-    }
+    public String color;
+    public double precio;
+    public int registro;
 
     public int getRegistro() {
         return registro;
-    }
-
-    public void setRegistro(int registro) {
-        this.registro = registro;
     }
 }
