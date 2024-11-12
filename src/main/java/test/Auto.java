@@ -16,18 +16,24 @@ public class Auto {
         this.marca = marca;
         this.motor = motor;
         this.registro = registro;
-        cantidadCreados++;
+        synchronized (Auto.class) {
+            cantidadCreados++;
+        }
     }
 
     public Auto() {
-        // Default constructor
+        synchronized (Auto.class) {
+            cantidadCreados++;
+        }
     }
 
     public int cantidadAsientos() {
         int count = 0;
-        for (Asiento asiento : asientos) {
-            if (asiento != null) {
-                count++;
+        if (asientos != null) {
+            for (Asiento asiento : asientos) {
+                if (asiento != null) {
+                    count++;
+                }
             }
         }
         return count;
@@ -35,16 +41,18 @@ public class Auto {
 
     public String verificarIntegridad() {
         int registroAsiento = -1;
-        for (Asiento asiento : asientos) {
-            if (asiento != null) {
-                if (registroAsiento == -1) {
-                    registroAsiento = asiento.getRegistro();
-                } else if (registroAsiento != asiento.getRegistro()) {
-                    return "Las piezas no son originales";
+        if (asientos != null) {
+            for (Asiento asiento : asientos) {
+                if (asiento != null) {
+                    if (registroAsiento == -1) {
+                        registroAsiento = asiento.getRegistro();
+                    } else if (registroAsiento != asiento.getRegistro()) {
+                        return "Las piezas no son originales";
+                    }
                 }
             }
         }
-        if (registroAsiento == this.registro && this.registro == this.motor.getRegistro()) {
+        if (motor != null && registroAsiento == this.registro && this.registro == this.motor.getRegistro()) {
             return "Auto original";
         } else {
             return "Las piezas no son originales";
@@ -103,65 +111,4 @@ public class Auto {
     public void setRegistro(int registro) {
         this.registro = registro;
     }
-}
-
-public class auto {
-    private int cilindros;
-    private String tipo;
-    private int registro;
-
-    public auto(int cilindros, String tipo, int registro) {
-        this.cilindros = cilindros;
-        this.tipo = tipo;
-        this.registro = registro;
-    }
-
-    public auto() {
-        // Default constructor
-    }
-
-    public void cambiarRegistro(int nuevoRegistro) {
-        this.registro = nuevoRegistro;
-    }
-
-    public void asignarTipo(String nuevoTipo) {
-        if (nuevoTipo.equals("gasolina") || nuevoTipo.equals("electrico")) {
-            this.tipo = nuevoTipo;
-        }
-    }
-
-    // Getters and setters for private attributes
-    public int getCilindros() {
-        return cilindros;
-    }
-
-    public void setCilindros(int cilindros) {
-        this.cilindros = cilindros;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
-    public int getRegistro() {
-        return registro;
-    }
-
-    public void setRegistro(int registro) {
-        this.registro = registro;
-    }
-}
-
-public class Asiento {
-    public String color;
-    public double precio;
-    public int registro;
-
-    public int getRegistro() {
-        return registro;
-    }
-}
+} 

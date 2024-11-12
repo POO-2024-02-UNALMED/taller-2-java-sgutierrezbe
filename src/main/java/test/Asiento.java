@@ -6,7 +6,9 @@ public class Asiento {
     public int registro;
 
     public void cambiarColor(String nuevoColor) {
-        this.color = nuevoColor;
+        if (nuevoColor != null) {
+            this.color = nuevoColor;
+        }
     }
 
     public int getRegistro() {
